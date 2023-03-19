@@ -44,18 +44,18 @@ namespace Logic.Logic
             return resultList.ToList();
         }
 
-        public List<ImageItem> GetImageByName(string imageName)
+        public List<ImageItem> GetImageById(int id)
      
         {
             var nameFilter = new ImageItem();
-            nameFilter.ImageName = imageName;
+            nameFilter.Id = id;
 
             var resultList = _serviceContext.Set<ImageItem>()
-                .Where(i => i.ImageName == imageName);
+                .Where(i => i.Id == id);
 
-            if (nameFilter.ImageName == imageName)
+            if (nameFilter.Id == id)
             {
-                resultList = resultList.Where(i => i.ImageName == imageName);
+                resultList = resultList.Where(i => i.Id == id);
             }
             
             return resultList.ToList();

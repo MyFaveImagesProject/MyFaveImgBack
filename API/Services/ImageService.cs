@@ -28,10 +28,10 @@ namespace API.Services
             return _imageLogic.GetImageByCriteria(Category);
         }
 
-        public List<ImageItem> GetImageByName(string imageName)
+        public List<ImageItem> GetImageById(int id)
 
         {
-            return _imageLogic.GetImageByName(imageName);
+            return _imageLogic.GetImageById(id);
         }
 
         public int InsertImage(ImageItem imageItem)

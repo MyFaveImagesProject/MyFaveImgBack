@@ -39,7 +39,7 @@ namespace Apii.Controllers
         }
 
         [HttpPatch(Name = "ModifyImage")]
-        public void Patch([FromBody] ImageItem imageItem)
+        public void Patch([FromBody] ImageItem imageItem, [FromQuery] int id)
 
         {
                 _imageService.UpdateImage(imageItem);
@@ -53,11 +53,11 @@ namespace Apii.Controllers
             return _imageService.GetImageByCriteria(Category);
         }
 
-        [HttpGet(Name = "GetImagesByName")]
-        public List<ImageItem> GetImageByName([FromQuery] string imageName)
+        [HttpGet(Name = "GetImagesById")]
+        public List<ImageItem> GetImageById([FromQuery] int id)
         {
 
-            return _imageService.GetImageByName(imageName);
+            return _imageService.GetImageById(id);
         }
 
         [HttpGet(Name = "GetAllImages")]

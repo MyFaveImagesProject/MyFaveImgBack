@@ -13,7 +13,7 @@ namespace Logic.ILogic
 
         List<ImageItem> GetImageByCriteria(string Category);
 
-        public List<ImageItem> GetImageByName(string imageName);
+        public List<ImageItem> GetImageById(int id);
         List<ImageItem> GetAll();
     }
 }
