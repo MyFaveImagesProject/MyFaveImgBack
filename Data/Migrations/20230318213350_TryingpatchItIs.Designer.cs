@@ -4,6 +4,7 @@ using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(ServiceContext))]
-    partial class ServiceContextModelSnapshot : ModelSnapshot
+    [Migration("20230318213350_TryingpatchItIs")]
+    partial class TryingpatchItIs
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,12 +34,14 @@ namespace Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Category")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("IdWeb")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ImageName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageSource")
@@ -46,9 +51,6 @@ namespace Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsPublic")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");

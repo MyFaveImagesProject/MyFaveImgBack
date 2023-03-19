@@ -1,6 +1,7 @@
 ﻿using Logic.ILogic;
 using API.IServices;
-using Entities;
+using Microsoft.AspNetCore.Mvc;
+using Entities.Entities;
 
 namespace API.Services
 {
@@ -25,6 +26,12 @@ namespace API.Services
         public List<ImageItem> GetImageByCriteria(string Category)
         {
             return _imageLogic.GetImageByCriteria(Category);
+        }
+
+        public List<ImageItem> GetImageByName(string imageName)
+
+        {
+            return _imageLogic.GetImageByName(imageName);
         }
 
         public int InsertImage(ImageItem imageItem)

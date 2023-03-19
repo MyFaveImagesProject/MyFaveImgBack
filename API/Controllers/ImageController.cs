@@ -1,6 +1,6 @@
 ﻿using API.IServices;
 using Data;
-using Entities;
+using Entities.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 using System.Security.Authentication;
@@ -51,6 +51,13 @@ namespace Apii.Controllers
         {
 
             return _imageService.GetImageByCriteria(Category);
+        }
+
+        [HttpGet(Name = "GetImagesByName")]
+        public List<ImageItem> GetImageByName([FromQuery] string imageName)
+        {
+
+            return _imageService.GetImageByName(imageName);
         }
 
         [HttpGet(Name = "GetAllImages")]

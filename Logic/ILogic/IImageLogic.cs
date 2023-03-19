@@ -1,5 +1,4 @@
-﻿using Entities;
-
+﻿using Entities.Entities;
 
 namespace Logic.ILogic
 {
@@ -13,6 +12,8 @@ namespace Logic.ILogic
         void UpdateImage(ImageItem imageItem);
 
         List<ImageItem> GetImageByCriteria(string Category);
+
+        public List<ImageItem> GetImageByName(string imageName);
         List<ImageItem> GetAll();
     }
 }

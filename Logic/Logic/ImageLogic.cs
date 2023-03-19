@@ -1,5 +1,5 @@
 ﻿using Data;
-using Entities;
+using Entities.Entities;
 using Logic.ILogic;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -12,7 +12,7 @@ namespace Logic.Logic
 {
     public class ImageLogic : BaseContextLogic, IImageLogic
     {
-       
+
         public ImageLogic(ServiceContext serviceContext) : base(serviceContext) { }
 
         void IImageLogic.DeleteImage(int id)
@@ -23,8 +23,8 @@ namespace Logic.Logic
 
         public List<ImageItem> GetAll()
         {
-            var allProducts = _serviceContext.Set<ImageItem>().ToList();
-            return allProducts;
+            var allImages = _serviceContext.Set<ImageItem>().ToList();
+            return allImages;
         }
 
         public List<ImageItem> GetImageByCriteria(string Category)
@@ -44,6 +44,23 @@ namespace Logic.Logic
             return resultList.ToList();
         }
 
+        public List<ImageItem> GetImageByName(string imageName)
+     
+        {
+            var nameFilter = new ImageItem();
+            nameFilter.ImageName = imageName;
+
+            var resultList = _serviceContext.Set<ImageItem>()
+                .Where(i => i.ImageName == imageName);
+
+            if (nameFilter.ImageName == imageName)
+            {
+                resultList = resultList.Where(i => i.ImageName == imageName);
+            }
+            
+            return resultList.ToList();
+
+        }
         int IImageLogic.InsertImagetItem(ImageItem imageItem)
         {
 
@@ -53,12 +70,15 @@ namespace Logic.Logic
         }
 
         public void UpdateImage(ImageItem imageItem)
+            
         {
+
+
             _serviceContext.Images.Update(imageItem);
             _serviceContext.SaveChanges();
         }
 
-        
+       
     }
 }
 
