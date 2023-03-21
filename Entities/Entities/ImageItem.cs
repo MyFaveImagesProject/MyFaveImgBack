@@ -15,7 +15,7 @@ namespace Entities.Entities
         {
             IsActive = true;
             IsPublic = true;
-            IdWeb = new Guid();
+            IdWeb = Guid.NewGuid();
             InsertDate = DateTime.Now;
 
         }
@@ -26,7 +26,7 @@ namespace Entities.Entities
         public string Category { get; set; }
         public Guid IdWeb { get; private set; }
         public DateTime InsertDate { get; private set; }
-        public bool IsActive { get; private set; }
+        public bool IsActive { get; set; }
         public bool IsPublic { get; private set; }
 
 

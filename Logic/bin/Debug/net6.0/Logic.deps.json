@@ -8,8 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "Logic/1.0.0": {
         "dependencies": {
-          "Data": "1.0.0",
-          "Entities": "1.0.0"
+          "Entities": "1.0.0",
+          "TestProject": "1.0.0"
         },
         "runtime": {
           "Logic.dll": {}
@@ -772,18 +772,6 @@
           }
         }
       },
-      "Data/1.0.0": {
-        "dependencies": {
-          "Entities": "1.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0",
-          "Microsoft.EntityFrameworkCore.Tools": "7.0.0",
-          "Microsoft.Extensions.Configuration": "7.0.0",
-          "Microsoft.Extensions.Configuration.Json": "7.0.0"
-        },
-        "runtime": {
-          "Data.dll": {}
-        }
-      },
       "Entities/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.0",
@@ -791,6 +779,17 @@
         },
         "runtime": {
           "Entities.dll": {}
+        }
+      },
+      "TestProject/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0",
+          "Microsoft.EntityFrameworkCore.Tools": "7.0.0",
+          "Microsoft.Extensions.Configuration": "7.0.0",
+          "Microsoft.Extensions.Configuration.Json": "7.0.0"
+        },
+        "runtime": {
+          "Data.dll": {}
         }
       }
     }
@@ -1319,12 +1318,12 @@
       "path": "system.windows.extensions/5.0.0",
       "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
     },
-    "Data/1.0.0": {
+    "Entities/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Entities/1.0.0": {
+    "TestProject/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

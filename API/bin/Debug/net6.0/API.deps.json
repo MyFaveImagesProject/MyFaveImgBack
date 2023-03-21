@@ -8,11 +8,11 @@
     ".NETCoreApp,Version=v6.0": {
       "API/1.0.0": {
         "dependencies": {
-          "Data": "1.0.0",
           "Entities": "1.0.0",
           "Logic": "1.0.0",
           "Microsoft.AspNet.WebApi.Cors": "5.2.9",
-          "Swashbuckle.AspNetCore": "6.2.3"
+          "Swashbuckle.AspNetCore": "6.2.3",
+          "TestProject": "1.0.0"
         },
         "runtime": {
           "API.dll": {}
@@ -1575,18 +1575,6 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
-      "Data/1.0.0": {
-        "dependencies": {
-          "Entities": "1.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0",
-          "Microsoft.EntityFrameworkCore.Tools": "7.0.0",
-          "Microsoft.Extensions.Configuration": "7.0.0",
-          "Microsoft.Extensions.Configuration.Json": "7.0.0"
-        },
-        "runtime": {
-          "Data.dll": {}
-        }
-      },
       "Entities/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.0",
@@ -1598,11 +1586,22 @@
       },
       "Logic/1.0.0": {
         "dependencies": {
-          "Data": "1.0.0",
-          "Entities": "1.0.0"
+          "Entities": "1.0.0",
+          "TestProject": "1.0.0"
         },
         "runtime": {
           "Logic.dll": {}
+        }
+      },
+      "TestProject/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0",
+          "Microsoft.EntityFrameworkCore.Tools": "7.0.0",
+          "Microsoft.Extensions.Configuration": "7.0.0",
+          "Microsoft.Extensions.Configuration.Json": "7.0.0"
+        },
+        "runtime": {
+          "Data.dll": {}
         }
       }
     }
@@ -2691,17 +2690,17 @@
       "path": "system.xml.xmldocument/4.3.0",
       "hashPath": "system.xml.xmldocument.4.3.0.nupkg.sha512"
     },
-    "Data/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Entities/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "Logic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TestProject/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
