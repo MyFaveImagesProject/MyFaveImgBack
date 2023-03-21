@@ -24,7 +24,7 @@ namespace Entities.Entities
         public string ImageName { get; set; }
         public string ImageSource { get; set; }
         public string Category { get; set; }
-        public Guid IdWeb { get; private set; }
+        public Guid IdWeb { get; set; }
         public DateTime InsertDate { get; private set; }
         public bool IsActive { get; set; }
         public bool IsPublic { get; private set; }
